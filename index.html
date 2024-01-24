@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Reajuste de Aluguel</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculadora de Reajuste de Aluguel</h1>
+        <form id="calculator-form">
+            <label for="indexSelect">Índice de Reajuste:</label>
+            <select id="indexSelect" class="index-select">
+                <option value="igpm">IGP-M - Índice Geral de Preços do Mercado</option>
+                <option value="inccdi">INCC-DI - Índice Nacional de Custo da Construção</option>
+                <option value="inpc">INPC - Índice Nacional de Preços ao Consumidor</option>
+                <option value="ipc">IPC - Índice de Preços ao Consumidor</option>
+                <option value="ipca">IPCA - Índice Nacional de Preços ao Consumidor Amplo</option>
+                <option value="igp">IGP - Índice Geral de Preços</option>
+            </select><br>
+
+            <label for="currentRent">Valor do aluguel no início do contrato:</label>
+            <input type="number" id="currentRent" step="any" required><br>
+
+            <label for="contractStartDate">Data do início do contrato:</label>
+            <input type="date" id="contractStartDate" required><br>
+
+            <label for="periodicity">Periodicidade do Reajuste:</label>
+            <select id="periodicity">
+                <option value="mensal">Mensal</option>
+                <option value="trimestral">Trimestral</option>
+                <option value="semestral">Semestral</option>
+                <option value="anual">Anual</option>
+                <option value="bianual">Bianual</option>
+            </select><br>
+
+            <button type="button" id="calculateButton">Calcular Novo Aluguel</button>
+            <button type="button" id="clearButton">Limpar</button><br>
+
+            <label for="newRent">Resultado:</label>
+            <input type="text" id="newRent" disabled>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
